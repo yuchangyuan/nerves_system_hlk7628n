@@ -1,0 +1,5 @@
+config BR2_PACKAGE_MT76_MT76X8
+    bool "MediaTek MT76x8 wireless driver"
+    select BR2_PACKAGE_MAC80211_NODRV
+	help
+	  MediaTek MT76x8 wireless driver, from OpenWrt mt76 repo.

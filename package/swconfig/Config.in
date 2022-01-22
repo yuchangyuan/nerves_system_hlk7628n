@@ -1,0 +1,6 @@
+config BR2_PACKAGE_SWCONFIG
+	bool "swconfig from OpenWrt"
+	select BR2_PACKAGE_LIBNL
+	select BR2_PACKAGE_LIBUBOX
+	help
+		OpenWrt swconfig binary, remove uci dependency

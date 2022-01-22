@@ -1,0 +1,18 @@
+menu "Linux Kernel OpenWrt Extensions"
+
+# openwrt generic
+config BR2_LINUX_KERNEL_EXT_OPENWRT_PATCHES
+	bool "OpenWrt generic patches"
+    select BR2_PACKAGE_OPENWRT_PATCHES
+	help
+	  Add OpenWrt generic patches
+
+if BR2_LINUX_KERNEL_EXT_OPENWRT_PATCHES
+# openwrt ramips
+config BR2_LINUX_KERNEL_EXT_OPENWRT_PATCHES_RAMIPS
+    bool "OpenWrt ramips patches"
+	help
+	  Add OpenWrt ramips patches
+endif
+
+endmenu

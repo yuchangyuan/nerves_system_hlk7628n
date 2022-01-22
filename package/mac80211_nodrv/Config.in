@@ -1,0 +1,4 @@
+config BR2_PACKAGE_MAC80211_NODRV
+    bool "802.11 wireless driver, without actual device driver"
+	help
+    	Linux 802.11 Wireless Networking Stack, without actual vendor drivers

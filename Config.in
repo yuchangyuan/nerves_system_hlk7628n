@@ -1,0 +1,13 @@
+# Add project-specific packages for Buildroot here
+#
+# If these are non-proprietary, please consider contributing them back to
+# Nerves or Buildroot.
+
+source "$NERVES_DEFCONFIG_DIR/linux/Config.in"
+
+source "$NERVES_DEFCONFIG_DIR/package/openwrt-patches/Config.in"
+source "$NERVES_DEFCONFIG_DIR/package/lzma-old/Config.in"
+source "$NERVES_DEFCONFIG_DIR/package/swconfig/Config.in"
+source "$NERVES_DEFCONFIG_DIR/package/mac80211_nodrv/Config.in"
+source "$NERVES_DEFCONFIG_DIR/package/mt76-mt76x8/Config.in"
+

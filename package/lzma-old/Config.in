@@ -1,0 +1,4 @@
+config BR2_PACKAGE_HOST_LZMA_OLD
+    bool "LZMA Utils 4.x (host)"
+	help
+	  Old LZMA Utils (host)

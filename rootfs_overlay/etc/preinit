@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/etc/eth_setup.sh
+/etc/wifi_setup.sh

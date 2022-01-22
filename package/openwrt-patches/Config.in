@@ -1,0 +1,4 @@
+config BR2_PACKAGE_OPENWRT_PATCHES
+    bool
+	help
+	  OpenWrt kernel patches

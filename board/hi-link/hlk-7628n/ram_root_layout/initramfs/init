@@ -1,0 +1,45 @@
+#!/bin/busybox sh
+
+export PATH=/bin:/sbin
+
+ROOT=/mnt/root
+
+# mount common fs
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devtmpfs none /dev
+
+# get file
+mtd_rootfs=$(grep -F rootfs\" /proc/mtd | sed -e 's/:.*//')
+mtd_rootfs_data=$(grep -F rootfs_data /proc/mtd | sed -e 's/:.*//')
+
+off_rootfs=$(cat /sys/class/mtd/$mtd_rootfs/offset)
+off_rootfs_data=$(cat /sys/class/mtd/$mtd_rootfs_data/offset)
+
+echo "rootfs: ${mtd_rootfs}, offset: ${off_rootfs}"
+echo "rootfs_data: ${mtd_rootfs_data}, offset: ${off_rootfs_data}"
+
+mtd_rootfs_blk=$(echo $mtd_rootfs | sed -e 's/mtd/mtdblock/')
+
+echo "rootfs block: ${mtd_rootfs_blk}"
+
+size_b=$(($off_rootfs_data - $off_rootfs))
+size_k=$(($size_b / 1024 + 1))
+
+echo "rootfs size ~ $size_k KB"
+
+dd if=/dev/$mtd_rootfs_blk of=/root.sqfs bs=1K count=$size_k
+
+mount /root.sqfs $ROOT
+
+# clean up
+umount /sys
+umount /proc
+
+mount --move /dev  $ROOT/dev
+
+# boot 
+exec switch_root $ROOT /sbin/init "$@"
+
+# all busybox commands:
+# sh, ash, mount, grep sed, cat, echo, dd, umount, switch_root
