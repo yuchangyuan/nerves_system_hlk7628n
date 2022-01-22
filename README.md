@@ -2,8 +2,7 @@
 
 This is the base Nerves System configuration for the Hi-Link [HLK-7628N](https://www.hlktech.com/en/Product/Details/23)
 
-![HLK-7628N front](assets/images/hlk-7628n-front.jpg)
-![HLK-7628N back](assets/images/hlk-7628n-back.jpg)
+<img alt="HLK-7628N front" src="assets/images/hlk-7628n-front.jpg" width="40%"/> <img alt="HLK-7628N back" src="assets/images/hlk-7628n-back.jpg" width="40%"/>
 
 | Feature              | Description                     |
 | -------------------- | ------------------------------- |
@@ -15,7 +14,7 @@ This is the base Nerves System configuration for the Hi-Link [HLK-7628N](https:/
 | GPIO, I2C, SPI       | TODO                            |
 | ADC                  | No                              |
 | PWM                  | No                              |
-| UART                 | 3, ttyS0 ~ ttyS3                |
+| UART                 | 3, ttyS0 ~ ttyS2                |
 | Camera               | No                              |
 | Ethernet             | Yes, 5 port, 100M               |
 | WiFi                 | Yes                             |
@@ -25,8 +24,6 @@ This is the base Nerves System configuration for the Hi-Link [HLK-7628N](https:/
 ## Usage
 
 TODO
-
-*NOTE*: kernel build will fail at patching stage, due openwrt-patches not installed
 
 ## Firmware flash
 
