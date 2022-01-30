@@ -1,4 +1,11 @@
 #!/bin/sh
 
-/etc/eth_setup.sh
-/etc/wifi_setup.sh
+if [ -d /etc/preinit.d ]; then
+  for i in /etc/preinit.d/*.sh; do
+    if [ -r $i ]; then
+      echo "source '$i'"
+      . $i
+    fi
+  done
+  unset i
+fi
