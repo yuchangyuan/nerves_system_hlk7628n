@@ -1,0 +1,10 @@
+config BR2_PACKAGE_WPAD_OPENSSL
+	bool "IEEE 802.1x Auth/Supplicant"
+	select BR2_PACKAGE_LIBNL
+	select BR2_PACKAGE_MAC80211_NODRV
+	select BR2_PACKAGE_OPENSSL
+	select BR2_PACKAGE_LIBUBOX
+	help
+		wpad full with openssl support ported from OpenWrt.
+		This package contains a full featured IEEE 802.1x/WPA/EAP/RADIUS
+		 Authenticator and Supplicant

@@ -10,4 +10,5 @@ source "$NERVES_DEFCONFIG_DIR/package/lzma-old/Config.in"
 source "$NERVES_DEFCONFIG_DIR/package/swconfig/Config.in"
 source "$NERVES_DEFCONFIG_DIR/package/mac80211_nodrv/Config.in"
 source "$NERVES_DEFCONFIG_DIR/package/mt76-mt76x8/Config.in"
+source "$NERVES_DEFCONFIG_DIR/package/wpad-openssl/Config.in"
 
