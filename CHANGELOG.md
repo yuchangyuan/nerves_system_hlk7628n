@@ -12,6 +12,14 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.1.1
+Make necessary changes to support mesh/batman-adv usage.
+
+1. enable batman-adv & ipv6.
+2. move all preinit script to /etc/preinit.d, make it easy to add additional
+   init script.
+3. replace `wpa_supplicant` with `wpad-openssl` from OpenWrt.
+
 ## v0.1.0
 
 Initial version.
